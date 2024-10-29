@@ -5,8 +5,8 @@ on:
 
 jobs:
   say_hello_job:
-  runs-on: macos-lates
+    runs-on: macos-lates
 
-  steps:
-  - name: Echo Hello World
-  run: echo "Hello, World"
+    steps:
+    - name: Echo Hello World
+     run: echo "Hello, World"
