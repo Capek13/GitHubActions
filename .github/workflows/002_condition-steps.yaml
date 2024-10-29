@@ -1,0 +1,36 @@
+name: "02 Condition steps"
+
+on:
+  workflow_dispatch: # this even triggers the workflow manually
+
+jobs:
+  go_through_steps:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Step 1 - Exit Code 0
+      id: successful_step
+      run: |
+        echo "Exit code 0"
+        exit 0 
+      shell: bash
+    
+    - name: Step 2 - Execute If Previous Succeeded
+      if: ${{success{} }}
+      run: |
+        echo "running because previous step has succeeded"
+    
+    - name: Step 3 - I am Falling
+      run: |
+        echo "I am falling"
+        exit 1
+  
+    - name: Step 4 - Skipped step
+      run: |
+        echo "That stap will be skipped because step 3 faild"
+
+    - name: Step 5 - If failded
+      if: ${{failure{} }}
+      run: |
+        echo "this code run, because if: {{ failure {}}} = true"
+        
