@@ -1,0 +1,76 @@
+# key-values pair
+app: user-authentication # same "" , ''
+port: 9000
+version: 1.7
+
+# object
+microservice:
+  app: user-authentication 
+  port: 9000
+  version: 1.7
+
+# onlinezamltool.com - online validator
+
+# bool value - on/off , yes/no, true/false
+# list
+microservice:
+  - app: user-authentication 
+    port: 9000
+    version: [1.7, 1.8, 1.9]
+  - app: shoping-cart
+    port: 9002
+    version:
+      - 1.9
+      - 2.0
+      - 2.1
+
+microservices:
+  - user-authentication
+  - shopping-cart
+
+spec:
+  container:
+  - name: nginx_container
+    image: nginx
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: nginx-vol
+      mountPath: /usr/nginx/html
+  - name: sidecar-container
+    image: curlimages/curl
+
+
+# multiline strin 
+multilineString: 
+  This is a multiline string 
+  adn this is the next line
+  next line
+
+multilineString: |
+  This all will be  
+  only on the first line
+  not on three lines
+  # this all is on one line
+
+multilineString: >
+  This is a multiline string 
+  adn this is the next line
+  next line
+
+# enviromental variables ($)
+command:
+  - /bin/shs
+  - -ec
+  - >-
+    mysql -h 127.0.0.1 -u root -p$MYSQL_ROOT_PASSWORD -e 'SELECT 1'
+
+# placeholders
+metadata: 
+  name: {{.Values.service.name}}
+
+# multiple yaml domcuments
+
+---
+
+# nice to see commands in compare YAML and JSON
