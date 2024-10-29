@@ -5,8 +5,8 @@ on:
 
 jobs:
   say_hello_job:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Echo Hello World
-     run: echo "Hello, World"
+      run: echo "Hello, World"
