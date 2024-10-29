@@ -1,0 +1,12 @@
+name: "01 Hello world"
+
+on:
+  workflow_dispatch: # this even triggers the workflow manually
+
+jobs:
+  say_hello_job:
+  runs-on: mac-latest
+
+  steps:
+  - name: Echo Hello World
+  run: echo "Hello, World"
