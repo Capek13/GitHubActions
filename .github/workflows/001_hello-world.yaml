@@ -5,7 +5,7 @@ on:
 
 jobs:
   say_hello_job:
-  runs-on: mac-latest
+  runs-on: macos-lates
 
   steps:
   - name: Echo Hello World
