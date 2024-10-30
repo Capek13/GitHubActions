@@ -12,11 +12,11 @@ jobs:
       run: echo "exit code 0"
       shell: bash
     - name: success final step
-      if: {{ success()}}
+      if: ${{ success()}}
       run: |
         echo "all compliet successful"
     - name: failure final step
-      if: {{ failure()}}
+      if: ${{ failure()}}
       run: |
         echo "run failed"
 
