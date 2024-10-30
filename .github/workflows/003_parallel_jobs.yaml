@@ -5,7 +5,7 @@ on:
 
 jobs:
   first_job:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: First step
@@ -21,7 +21,7 @@ jobs:
         echo "run failed"
 
   secound_job:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Test 1
@@ -29,7 +29,7 @@ jobs:
       echo "Hello world!"
 
   third_job:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Test 2
