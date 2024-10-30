@@ -34,4 +34,4 @@ jobs:
     steps:
       - name: Test 2
         run: |
-          echo ""Test 2 is succesful complete"
+          echo "Test 2 is succesful complete"
