@@ -16,7 +16,7 @@ jobs:
       shell: bash
     
     - name: Step 2 - Execute If Previous Succeeded
-      if: ${{ success{} }}
+      if: ${{ success() }}
       run: |
         echo "running because previous step has succeeded"
     
@@ -30,6 +30,6 @@ jobs:
         echo "I will never execute"
 
     - name: Step 5 - Execute on Workflow Failure
-      if: ${{ failure{} }}
+      if: ${{ failure() }}
       run: |
         echo "Workflow failed"
