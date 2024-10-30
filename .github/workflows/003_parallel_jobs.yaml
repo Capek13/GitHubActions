@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - name: First step
-      run: echo" exit code 0"
+      run: echo "exit code 0"
       shell: bash
     - name: success final step
       if: {{ success()}}
