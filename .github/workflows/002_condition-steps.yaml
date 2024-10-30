@@ -1,4 +1,4 @@
-name: "02 Condition steps"
+name: 02 Condition steps
 
 on:
   workflow_dispatch: # this even triggers the workflow manually
@@ -16,7 +16,7 @@ jobs:
       shell: bash
     
     - name: Step 2 - Execute If Previous Succeeded
-      if: ${{success{} }}
+      if: ${{ success{} }}
       run: |
         echo "running because previous step has succeeded"
     
@@ -25,12 +25,11 @@ jobs:
         echo "I am falling"
         exit 1
   
-    - name: Step 4 - Skipped step
+    - name: Step 4 - I will never execute
       run: |
-        echo "That stap will be skipped because step 3 faild"
+        echo "I will never execute"
 
-    - name: Step 5 - If failded
-      if: ${{failure{} }}
+    - name: Step 5 - Execute on Workflow Failure
+      if: ${{ failure{} }}
       run: |
-        echo "this code run, because if: {{ failure {}}} = true"
-        
+        echo "Workflow failed"
