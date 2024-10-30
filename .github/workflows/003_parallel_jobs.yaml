@@ -1,0 +1,39 @@
+name: 003 parallel jobs 
+
+on:
+  workflow_dispatch:
+
+jobs:
+  first_job:
+    runs_on: ubuntu-latest
+
+    steps:
+    - name: First step
+      run: echo" exit code 0"
+      shell: bash
+    - name: success final step
+      if: {{ success()}}
+      run: |
+        echo "all compliet successful"
+    - name: failure final step
+      if: {{ failure()}}
+      run: |
+        echo "run failed"
+
+jobs:
+  secound_job:
+    runs_on: ubuntu-latest
+
+    steps:
+    - name: Test 1
+    run: |
+      echo "Hello world!"
+
+jobs:
+  third_job:
+    runs_on: ubuntu-latest
+
+    steps:
+    - name: Test 2
+    run: |
+      echo ""Test 2 is succesful complete"
