@@ -24,14 +24,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Test 1
-    run: |
-      echo "Hello world!"
+      - name: Test 1
+        run: |
+        echo "Hello world!"
 
   third_job:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Test 2
-    run: |
-      echo ""Test 2 is succesful complete"
+      - name: Test 2
+        run: |
+        echo ""Test 2 is succesful complete"
