@@ -15,7 +15,8 @@ on:
 
 jobs:
     echo-username-age:
-        runs-on:
+        runs-on: ubuntu-latest
+        steps:
             -   name: Echo Username and Age
                 run: |
                     echo "Username: ${{ inputs.username}}"
