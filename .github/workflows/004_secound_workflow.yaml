@@ -2,7 +2,7 @@ name: 04 secound workflow
 
 on:
   workflow_run:
-    workdlows: ["04 workflow_dispach"]
+    workdlows: ["04 workflow_dispatch"]
     types:
       - completed
 
