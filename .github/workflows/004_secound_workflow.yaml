@@ -1,4 +1,4 @@
-name: 04 secound workflow
+name: 04 secound_workflow
 
 on:
   workflow_run:
