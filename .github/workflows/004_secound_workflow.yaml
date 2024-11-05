@@ -1,0 +1,15 @@
+name: 04 secound workflow
+
+on:
+  workflow_run:
+    workdlows: ["04 workflow_dispach"]
+    types:
+      - completed
+
+jobs:
+  echo-hi-all:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo "Hi all"
+        run: |
+          echo "Hi all"
