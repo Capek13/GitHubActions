@@ -13,4 +13,4 @@ jobs:
           echo "name=Jaromir" >> $GITHUB_OUTPUT
       - name: Receive data
         run: |
-          echo ${{ steps.sedner.outputs.name}}
+          echo ${{ steps.sender.outputs.name}}
