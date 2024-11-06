@@ -10,7 +10,7 @@ jobs:
      -  name: Create data
         id: data-sender
         run: |
-          echo "name=Jaromir" >> GITHUB_OUTPUT
+          echo "name=Jaromir" >> $GITHUB_OUTPUT
     outputs:
       name: ${{steps.data-sender.outputs.name}}
     
