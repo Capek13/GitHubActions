@@ -1,0 +1,42 @@
+name: 07 Passing Files In Artifacts
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latests
+    steps:  
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Install Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Install tox
+        run: pip install tox
+      - name: Run unit test
+        run: |
+          cd backend
+          tox -e units
+          ls -la ${{github.workspace}}/backend
+        
+      - name: Upload artifact
+        uses: actions/uploud-artifact@v3
+        with:
+          name: coverage
+          path: ${{ github.workspace}}/backend/.coverage
+  load-file-example:
+    runs-on: ubuntu-latests
+    needs: [unit-tests]
+    steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v3
+      with: 
+        name: coverage
+        path: ${{github.workspace}}
+    - name: List folder
+      run: ls -la ${{github.workspace}}
+   
