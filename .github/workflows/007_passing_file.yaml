@@ -28,6 +28,7 @@ jobs:
         with:
           name: coverage
           path: ${{ github.workspace}}/backend/.coverage
+      - name: Diagnostic message
         run: |
           ls -R /home/runner/work/GitHubActions/GitHubActions/backend
           
