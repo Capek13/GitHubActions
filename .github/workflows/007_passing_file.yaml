@@ -5,7 +5,7 @@ on:
 
 jobs:
   unit-tests:
-    runs-on: ubuntu-latests
+    runs-on: ubuntu-22.04
     steps:  
       - name: Checkout source code
         uses: actions/checkout@v4
@@ -30,7 +30,7 @@ jobs:
           path: ${{ github.workspace}}/backend/.coverage
           
   load-file-example:
-    runs-on: ubuntu-latests
+    runs-on: ubuntu-22.04
     needs: [unit-tests]
     steps:
     - name: Download artifact
