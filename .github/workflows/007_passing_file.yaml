@@ -28,6 +28,8 @@ jobs:
         with:
           name: coverage
           path: ${{ github.workspace}}/backend/.coverage
+        run: |
+          ls -R /home/runner/work/GitHubActions/GitHubActions/backend
           
   load-file-example:
     runs-on: ubuntu-22.04
