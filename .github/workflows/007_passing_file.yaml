@@ -17,9 +17,9 @@ jobs:
       
       - name: Install tox
         run: pip install tox
-      - name: Run unit test
+      - name: Run unit tests
         run: |
-          cd backend
+          cd backends
           tox -e unit
           ls -la ${{github.workspace}}/backend
         
