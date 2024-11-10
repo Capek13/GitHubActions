@@ -23,6 +23,16 @@ jobs:
           tox -e unit
           ls -la ${{github.workspace}}/backend
         
+      - name: Check coverage file path
+        run: |
+          # Vypíše, zda soubor .coverage je viditelný na specifikované cestě
+          if [ -f "${{github.workspace}}/backend/.coverage" ]; then
+            echo ".coverage file found at ${{github.workspace}}/backend/.coverage"
+          else
+            echo "No .coverage file found at ${{github.workspace}}/backend/.coverage"
+            exit 1
+          fi
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
