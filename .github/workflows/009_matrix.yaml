@@ -1,7 +1,7 @@
 name: 09 Matrix
 
 on:
-    worklflow_dispatch:
+    workflow_dispatch:
 
 jobs:
     run-tests:
