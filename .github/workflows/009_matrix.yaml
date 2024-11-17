@@ -14,17 +14,17 @@ jobs:
 
         steps:
             - name: Checkout source code
-                user: actions/checkout@v4
+              user: actions/checkout@v4
 
             - name: Insall python
-                user: actions/setup-python@v4
-                with:
-                python-version: "$ {{ matrix.python-version }}"
+              user: actions/setup-python@v4
+              with:
+              python-version: "$ {{ matrix.python-version }}"
 
             - name: Install tox
-                run: pip install tox
+              run: pip install tox
             
             - name: Run unit tests
-                run: |
+              run: |
                 cd backend
                 tox -e unit
